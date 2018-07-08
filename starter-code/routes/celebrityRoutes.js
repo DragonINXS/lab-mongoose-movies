@@ -20,7 +20,7 @@ router.get('/celebrities/:id', (req, res, next) => {
     Celebrity.findById(id)
         .then((theCelebrity) => {
             //I have trouble res.render the right format/path - getting the hang of it now
-            res.render('show', theCelebrity);
+            res.render('celebrities/show', theCelebrity);
         })
         .catch((err) => {
             next(err);
@@ -30,10 +30,10 @@ router.get('/celebrities/:id', (req, res, next) => {
 
 //creates new and adds to db
 router.get('/celebrities/new', (req, res, next) => {
-    res.render('new');
+    res.render('celebrities/new');
 });
 
-render.post('/celebrities/create', (req, res, next) => {
+router.post('/celebrities/create', (req, res, next) => {
     //fancy way of doing the below
     const newCeleb = new Celebrity(req.body);
     // const newCeleb = new Celebrity({
@@ -47,7 +47,7 @@ render.post('/celebrities/create', (req, res, next) => {
             res.redirect('/celebrities');
         })
         .catch((err) => {
-            res.render('new');
+            res.render('celebrities/new');
             // next(err);
         });
 });
