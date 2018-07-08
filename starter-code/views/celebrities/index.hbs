@@ -2,8 +2,12 @@
 
 {{#each listOfCelebrities}}
 
-{{> _celebrityPartial}}
+    <div>
+        {{> _celebrityPartial}}
+        <a href="/celebrities/{{this._id}}">See Details</a>
+    </div>
 
+    <hr>
 {{/each}}
 
 <a href="/celebrities">Celebrities</a>
