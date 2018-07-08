@@ -21,7 +21,7 @@ const celebrities = [
     {
         name: 'Loki',
         occupation: 'Being a dick',
-        catchPhrase: "I do what I wany"
+        catchPhrase: "I do what I want"
     }
 
 ];
