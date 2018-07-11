@@ -1,0 +1,29 @@
+<form action="/movies/addMovie" method="post">
+
+    <label for="title-input">Tile</label>
+    <input type="text" name="newTitle" id="title-input">
+
+    <label for="genre-input">Genre</label>
+    <input type="text" name="newGenre" id="genre-input">
+
+    <label for="plot-input">Plot</label>
+    <input type="text" name="newPlot" id="plot-input">
+    
+    <label for="cast-input">Cast: </label>
+    
+        {{#each allTheCelebrities}}
+            <label><input type="checkbox" name="newCast" id="cast-input" value="{{this._id}}">{{this.name}}</label>
+        {{/each}}  
+
+
+    {{!-- <label>Celebrities</label>
+    <select name="celebrity">
+        {{#each allTheCelebs}}
+        <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select> --}}
+
+    <button type="submit">Create</button>
+
+</form>
+

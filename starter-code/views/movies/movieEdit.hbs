@@ -1,0 +1,34 @@
+<form action="/movies/edited/{{movie._id}}" method="post">
+
+    <label for="title-input">Tile</label>
+    <input type="text" name="editedTitle" id="title-input" value="{{movie.title}}">
+
+    <label for="genre-input">Genre</label>
+    <input type="text" name="editedGenre" id="genre-input" value="{{movie.genre}}">
+
+    <label for="plot-input">Plot</label>
+    <input type="text" name="editedPlot" id="plot-input" value="{{movie.plot}}">
+
+
+    <label for="cast-input">Cast: </label>
+    
+        {{#each allTheCelebrities}}
+            {{#if this.yes}}
+                <label><input checked type="checkbox" name="editedCast" id="cast-input" value="{{this._id}}">{{this.name}}</label>
+            {{/if}}
+ 
+            {{#unless this.yes}}
+                <label><input type="checkbox" name="editedCast" id="cast-input" value="{{this._id}}">{{this.name}}</label>
+            {{/unless}}
+        {{/each}} 
+     {{!-- <label for="cast-input">Cast</label>
+    <form action="/movies/edited/{{movie._id}}" method="post">
+        <label><input type="checkbox" name="editedCast" id="cast-input" value="Thor">Thor</label>
+         <label><input type="checkbox" name="editedCast" id="cast-input" value="Odin">Odin</label>
+        <label><input type="checkbox" name="editedCast" id="cast-input" value="Loki">Loki</label>
+        <input type="submit" value="Submit">
+    </form> --}}
+    
+    <button type="submit">Save Changes</button>
+
+</form>

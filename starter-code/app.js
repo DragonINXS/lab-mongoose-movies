@@ -51,11 +51,17 @@ hbs.registerPartials(__dirname + '/views/partials/');
 app.locals.title = 'Express - Generated with IronGenerator';
 
 
-
+//routes middleswares - ability to recieve info for next steps
 const index = require('./routes/index');
 app.use('/', index);
 
 const celebrityRoutes = require('./routes/celebrityRoutes');
 app.use('/', celebrityRoutes);
+
+const movieRoutes = require('./routes/movieRoutes');
+app.use('/', movieRoutes);
+
+const reviewRoutes = require('./routes/reviewRoutes');
+app.use('/', reviewRoutes);
 
 module.exports = app;

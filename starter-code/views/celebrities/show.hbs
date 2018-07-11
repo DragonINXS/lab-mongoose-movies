@@ -1,8 +1,14 @@
-<h2>Show {{this.name}}</h2>
+{{!-- <h2>Show {{this.name}}</h2> --}}
 
-<div>
+{{!-- <div>
     <span>Name: {{this.name}}</span> <br>
     <span>Occupation: {{this.occupation}}</span> <br>
     <span>Chatch Phrase: {{this.catchPhrase}}</span> <br>
     <hr>
-</div> 
+</div>  --}}
+
+
+<div>
+    {{> _celebrityPartial this}}
+    <a href="/celebrity/edit/{{celebrity._id}}">Edit</a> 
+</div>
