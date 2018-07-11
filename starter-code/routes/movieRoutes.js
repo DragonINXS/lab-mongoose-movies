@@ -61,7 +61,7 @@ movieRouter.get('/movies/edit/:movieId', (req, res, next) => {
                 allTheCelebrities.forEach((celebrity) => {
                     console.log("-=-=-=-=-=-=-=-=-",oneMovie);
                         oneMovie.cast.forEach((correctCelebrity) => {
-                            console.log(celebrity.name, correctCelebrity.name)
+                            console.log(celebrity.name, correctCelebrity.name);
                             if (celebrity._id.equals(correctCelebrity)) {
                                 celebrity.yes = true;
                             }
@@ -98,6 +98,8 @@ movieRouter.post('/movies/edited/:id', (req, res, next) => {
         .catch(err => console.log('Error while saving the changes after editing: ', err));
 });
 
+
+//deletes movie from DB
 movieRouter.post('/movies/:movieId/delete', (req, res, next) => {
     const id = req.params.movieId;
     Movie.findByIdAndRemove(id)
